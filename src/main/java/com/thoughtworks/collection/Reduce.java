@@ -27,7 +27,12 @@ public class Reduce {
     }
 
     public double getOrderedMedian() {
-        throw new NotImplementedException();
+        List<Integer> result = arrayList.stream().sorted().collect(Collectors.toList());
+        if (result.size() % 2 == 0) {
+            return (result.get(result.size() / 2) + result.get(result.size() / 2 - 1)) / 2.0;
+        } else {
+            return result.get(result.size() / 2 - 1);
+        }
     }
 
     public int getFirstEven() {
