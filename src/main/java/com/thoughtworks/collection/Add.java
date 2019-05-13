@@ -34,7 +34,12 @@ public class Add {
     }
 
     public double getMedianOfEven(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> result = arrayList.stream().filter(e -> e % 2 == 0).sorted().collect(Collectors.toList());
+        if (result.size() % 2 == 0) {
+            return (result.get(result.size() / 2) + result.get(result.size() / 2 - 1)) / 2.0;
+        } else {
+            return result.get(result.size() / 2 - 1);
+        }
     }
 
     public double getAverageOfEven(List<Integer> arrayList) {
@@ -53,7 +58,7 @@ public class Add {
         List<Integer> result1 = arrayList.stream().filter(e -> e % 2 == 0).sorted().collect(Collectors.toList());
         List<Integer> result2 = arrayList.stream().filter(e -> e % 2 != 0).sorted(Comparator.reverseOrder()).collect(Collectors.toList());
         result1.addAll(result2);
-        return  result1;
+        return result1;
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
