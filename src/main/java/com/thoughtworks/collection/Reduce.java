@@ -5,6 +5,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Reduce {
 
@@ -40,7 +41,7 @@ public class Reduce {
     }
 
     public int getIndexOfFirstEven() {
-        throw new NotImplementedException();
+        return IntStream.range(0, arrayList.size()).filter(e->arrayList.get(e) % 2==0).findFirst().getAsInt();
     }
 
     public boolean isEqual(List<Integer> arrayList) {
