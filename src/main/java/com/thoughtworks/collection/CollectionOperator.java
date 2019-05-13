@@ -31,8 +31,8 @@ public class CollectionOperator {
     }
 
     public int popLastElment(int[] array) {
-        throw new NotImplementedException();
-    }
+        return array[array.length - 1];
+   }
 
     public List<Integer> popCommonElement(int[] firstArray, int[] secondArray) {
         return Arrays.stream(firstArray).boxed().filter(e -> Arrays.stream(secondArray).boxed().anyMatch(e1 -> e1.equals(e))).collect(Collectors.toList());
