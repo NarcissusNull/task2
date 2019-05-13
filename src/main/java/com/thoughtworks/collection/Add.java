@@ -17,13 +17,7 @@ public class Add {
     public int getSumOfOdds(int leftBorder, int rightBorder) {
         int start = Math.min(leftBorder, rightBorder);
         int end = Math.max(leftBorder, rightBorder);
-        int sum = 0;
-        for (int i = start; i <= end; i++) {
-            if (i % 2 != 0) {
-                sum += i;
-            }
-        }
-        return sum;
+        return IntStream.rangeClosed(start, end).filter(e -> e % 2 != 0).sum();
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
