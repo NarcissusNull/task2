@@ -40,7 +40,7 @@ public class Add {
     }
 
     public int getSumOfProcessedOdds(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        return arrayList.stream().filter(e -> e % 2 != 0).reduce(0, (R, T) -> R += T * 3 + 5);
     }
 
     public double getMedianOfEven(List<Integer> arrayList) {
