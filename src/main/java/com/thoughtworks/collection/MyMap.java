@@ -27,7 +27,7 @@ public class MyMap {
     }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+        return array.stream().map(e -> e > 26 ? letters[(e - 1) / 26 - 1] + letters[(e % 26 + 25) % 26] : letters[e - 1]).collect(Collectors.toList());
     }
 
     public List<Integer> sortFromBig() {
