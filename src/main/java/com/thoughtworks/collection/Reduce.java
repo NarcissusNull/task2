@@ -41,7 +41,7 @@ public class Reduce {
     }
 
     public int getIndexOfFirstEven() {
-        return IntStream.range(0, arrayList.size()).filter(e->arrayList.get(e) % 2==0).findFirst().getAsInt();
+        return IntStream.range(0, arrayList.size()).filter(e -> arrayList.get(e) % 2 == 0).findFirst().getAsInt();
     }
 
     public boolean isEqual(List<Integer> arrayList) {
@@ -49,7 +49,12 @@ public class Reduce {
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
+        int size = arrayList.size();
+        if (size % 2 == 0) {
+            return ((Integer) singleLink.getNode(size / 2) + (Integer) singleLink.getNode(size / 2 + 1)) / 2.0;
+        } else {
+            return (Integer) singleLink.getNode(size / 2 + 1) / 1.0;
+        }
     }
 
     public int getLastOdd() {
