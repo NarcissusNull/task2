@@ -62,6 +62,8 @@ public class Add {
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>();
+        IntStream.range(0, arrayList.size() - 1).boxed().forEach(T->result.add(arrayList.get(T)*3+arrayList.get(T+1)*3));
+        return result;
     }
 }
