@@ -45,7 +45,7 @@ public class Reduce {
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        return IntStream.range(0, this.arrayList.size()).boxed().allMatch(e -> arrayList.size() > e && this.arrayList.get(e).equals(arrayList.get(e)));
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
