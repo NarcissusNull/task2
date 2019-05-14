@@ -58,10 +58,10 @@ public class Reduce {
     }
 
     public int getLastOdd() {
-        return arrayList.stream().filter(e -> e % 2 != 0).reduce((R, T)->T).get();
+        return arrayList.stream().filter(e -> e % 2 != 0).reduce((R, T) -> T).get();
     }
 
     public int getIndexOfLastOdd() {
-        throw new NotImplementedException();
+        return IntStream.range(0, arrayList.size()).filter(e -> arrayList.get(e) % 2 != 0).reduce((R, T) -> T).getAsInt();
     }
 }
